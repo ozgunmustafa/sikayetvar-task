@@ -1,12 +1,24 @@
+import axios from 'axios';
 import React from 'react'
-import { Modal,  Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 
-const RemoveModal=(props)=> {
+const RemoveModal=({post,show,onHide})=> {
+
+
+
+  const handleDelete=(id)=>{
+    
+    axios.delete(`http://jsonplaceholder.typicode.com/posts/${id}`)
+    .then((response)=>{
+      console.log(response)
+      onHide();
+    }).catch(()=>{
+    })
+  }
     return (
         <Modal
-          {...props}
-          show={props.show}
+          show={show}
           backdrop="static"
           aria-labelledby="contained-modal-title-vcenter"
         >
@@ -16,15 +28,14 @@ const RemoveModal=(props)=> {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Centered Modal</h4>
+    <h4>{post.title}</h4>
             <p>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-              consectetur ac, vestibulum at eros.
+             {post.body}
             </p>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={props.onHide}>Close</Button>
+            <button className="btn btn-light" onClick={onHide}>İptal</button>
+            <button className="btn btn-success"  onClick={()=>handleDelete(post.id)}>Sil</button>
           </Modal.Footer>
         </Modal>
       );

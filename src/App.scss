@@ -78,6 +78,10 @@ header {
     background-color: #2dce89;
     color: white;
   }
+  &-aqua{
+    background-color: #11CDEF;
+    color: white;
+  }
 }
 .navy-text {
   color: #32325d;
@@ -168,4 +172,7 @@ footer {
 }
 .modal-backdrop {
   background-color: #0000005b;
+}
+.modal-footer {
+   justify-content: flex-start; 
 }

@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import axios from "axios"
+import axios from "axios";
 
 const EditModal = (props) => {
-  const [article, setArticle] = useState({
-    title: props.article.title,
-    body: props.article.body
-  });
+  const [post, setPost] = useState({});
 
- const onInputChange = (event) =>{
-     setArticle({ ...article, [event.target.name]: event.target.value });
- }
- const onFormSubmit=(event)=>{
-     event.preventDefault();
-     axios.put(`http://jsonplaceholder.typicode.com/posts/${props.article.id}`,article)
-     .then((response)=>{
-         console.log(response)
-     })
- }
+  useEffect(()=>{
+    setPost(props.post)
+  },[props.post])
+
+  const onInputChange = (event) => {
+    setPost({ ...post, [event.target.name]: event.target.value });
+
+  };
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .put(`http://jsonplaceholder.typicode.com/posts/${props.post.id}`, post)
+      .then((response) => {
+        console.log(response);
+      });
+  };
   return (
     <Modal
       centered
@@ -34,17 +37,21 @@ const EditModal = (props) => {
         <Form.Control
           name="title"
           type="text"
-          placeholder="Title" 
+          placeholder="Title"
           onChange={onInputChange}
-          value={article.title}
+          value={post.title}
         />
         <Form.Label>Body</Form.Label>
-        <Form.Control name="body" as="textarea" rows="5" 
-        value={article.body}
-        onChange={onInputChange} />
+        <Form.Control
+          name="body"
+          as="textarea"
+          rows="5"
+          value={post.body}
+          onChange={onInputChange}
+        />
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={onFormSubmit}>Güncelle</Button>
+      <Modal.Footer className="float-left">
+        <button className="btn btn-aqua" onClick={onFormSubmit}>Güncelle</button>
       </Modal.Footer>
     </Modal>
   );
