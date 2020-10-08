@@ -33,7 +33,7 @@ const EditModal = (props) => {
         <Modal.Title id="contained-modal-title-vcenter">Düzenle</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form.Label>Title</Form.Label>
+        <Form.Label className="navy-text">Title</Form.Label>
         <Form.Control
           name="title"
           type="text"
