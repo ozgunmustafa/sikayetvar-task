@@ -24,7 +24,7 @@ const RemoveModal=({post,show,onHide})=> {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-              Modal heading
+              Silmek istiyor musunuz?
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
