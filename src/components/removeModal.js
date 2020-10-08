@@ -19,7 +19,7 @@ const RemoveModal=({post,show,onHide})=> {
     return (
         <Modal
           show={show}
-          backdrop="static"
+          onHide={onHide}
           aria-labelledby="contained-modal-title-vcenter"
         >
           <Modal.Header closeButton>
