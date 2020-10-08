@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+html{
+  font-family: 'Open Sans';
+}
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin-top: 20px;
+  nav {
+    width: 100%;
+    margin-left: 40px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style-type: none;
+      li {
+        color: white;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0px auto;
+}
+
+.content {
+  background-image: url(./bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 80vh;
+  width: 100%;
+}
+.content-card {
+  width: 100%;
+  min-height: 400px;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1),
+    0px 5px 15px rgba(0, 0, 0, 0.07);
+  border-radius: 4px;
+}
+.btn-featured {
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(50, 50, 93, 0.11),
+    0px 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  padding: 12px 28px;
+  color: #5e72e4 !important;
+}
+.btn {
+  padding: 12px 21px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08),
+    0px 4px 4px rgba(50, 50, 93, 0.11);
+  border-radius: 3px;
+  border: none;
+  &-primary {
+    background-color: #5e72e4;
+    color: white;
+  }
+  &-danger {
+    background-color: #fb6340;
+    color: white;
+  }
+  &-success {
+    background-color: #2dce89;
+    color: white;
+  }
+}
+.navy-text {
+  color: #32325d;
+  &-muted {
+    color: #525f7f;
+  }
+}
+.green-text {
+  color: #00cdac;
+}
+.post {
+  padding: 28px 0px;
+}
+.post + .post {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.profile {
+  &-name {
+    font-weight: normal;
+    font-size: 28px;
+    color: #32325d;
+  }
+  &-key {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    color: #adb5bd;
+  }
+  &-value {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.114286px;
+    color: #525f7f;
+  }
+  &-bottom {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #525f7f;
+  }
+}
+footer {
+  .footer-green-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+  }
+  .footer-navy-text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+  }
+
+  margin-top: 75px;
+  .icon {
+    padding: 12px;
+    box-shadow: 0px 7px 14px rgba(50, 50, 93, 0.1),
+      0px 3px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    color: white;
+    &-twitter {
+      background: #1da1f2;
+    }
+    &-facebook {
+      background: #3b5999;
+    }
+    &-dribble {
+      background: #ea4c89;
+    }
+    &-github {
+      background: #222222;
+    }
+  }
+  a + a {
+    margin-left: 12px;
+  }
+  .copyright {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    .link {
+      color: #8898aa;
+    }
+  }
+}
+.modal-backdrop {
+  background-color: #0000005b;
+}
