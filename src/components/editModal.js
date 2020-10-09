@@ -18,6 +18,7 @@ const EditModal = (props) => {
     axios
       .put(`http://jsonplaceholder.typicode.com/posts/${props.post.id}`, post)
       .then((response) => {
+        setPost(props.post)
         console.log(response);
       });
   };
